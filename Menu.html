@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Floricultura 4 Estações</title>
+    <link rel="stylesheet" href="styyle.css">
+</head>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li id="produtos-menu-item"><a href="#">Produtos</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <ul id="produtos-submenu" class="submenu">
+                <!-- Os itens do submenu serão adicionados dinamicamente aqui -->
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section>
+            <h1>Bem-vindo à Floricultura 4 Estações</h1>
+            <p>Na Floricultura 4 Estações, oferecemos uma ampla variedade de flores e plantas para todas as ocasiões. Nossos produtos são cultivados com o maior cuidado e carinho para garantir a melhor qualidade e frescor.</p>
+        </section>
+        <section>
+            <h2>Nossos Produtos</h2>
+            <p>Confira a nossa variedade de produtos que atendem a todas as suas necessidades florais:</p>
+            <ul>
+                <li>Arranjos Florais: Perfeitos para decorar sua casa ou presentear alguém especial.</li>
+                <li>Buquês: Ideais para casamentos, aniversários e outras celebrações.</li>
+                <li>Plantas Ornamentais: Adicione um toque de verde ao seu espaço com nossas plantas ornamentais.</li>
+                <li>Flores de Estação: Aproveite a beleza das flores de cada estação do ano.</li>
+                <li>Kits de Jardinagem: Tudo o que você precisa para começar seu próprio jardim.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos uma variedade de serviços para atender às suas necessidades florais:</p>
+            <ul>
+                <li>Decoração de Eventos: Tornamos seu evento inesquecível com nossas decorações florais.</li>
+                <li>Entrega de Flores: Serviço rápido e eficiente para levar flores frescas diretamente à sua porta.</li>
+                <li>Consultoria em Jardinagem: Dicas e orientações para cuidar do seu jardim.</li>
+                <li>Oficinas de Arranjos Florais: Aprenda a criar belos arranjos florais com nossos especialistas.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contato</h2>
+            <p>Visite nossa loja ou entre em contato conosco para saber mais sobre nossos produtos e serviços.</p>
+            <address>
+                <strong>Endereço:</strong> Rua xxxxxxxxxxx<br>
+                <strong>Telefone:</strong> (xx) xxxx-xxxx<br>
+                <strong>Email:</strong> <a href="mailto:contato@floricultura4estacoes.com.br">contato@floricultura4estacoes.com.br</a>
+            </address>
+        </section
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Floricultura 4 Estações. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Array com os produtos
+            var produtos = [
+                { nome: "Arranjos Florais", link: "arranjos.html" },
+                { nome: "Buquês", link: "buques.html" },
+                { nome: "Plantas Ornamentais", link: "plantas.html" },
+                { nome: "Flores de Estação", link: "flores-estacao.html" },
+                { nome: "Kits de Jardinagem", link: "kits-jardinagem.html" }
+            ];
+
+            // Elementos do menu e submenu
+            var produtosMenuItem = document.getElementById("produtos-menu-item");
+            var produtosSubmenu = document.getElementById("produtos-submenu");
+
+            // Função para criar os itens do submenu
+            function criarItensSubmenu() {
+                // Limpa o conteúdo atual do submenu
+                produtosSubmenu.innerHTML = "";
+
+                // Para cada produto, cria um novo item no submenu
+                produtos.forEach(function(produto) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = produto.link;
+                    a.textContent = produto.nome;
+                    li.appendChild(a);
+                    produtosSubmenu.appendChild(li);
+                });
+            }
+
+            // Evento de mouseover para exibir o submenu com os produtos
+            produtosMenuItem.addEventListener("mouseover", function() {
+                criarItensSubmenu();
+                produtosSubmenu.style.display = "block";
+            });
+
+            // Evento de mouseout para ocultar o submenu ao tirar o mouse
+            produtosMenuItem.addEventListener("mouseout", function() {
+                produtosSubmenu.style.display = "none";
+            });
+        });
+    </script>
+</body>
